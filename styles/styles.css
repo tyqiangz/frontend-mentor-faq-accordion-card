@@ -40,10 +40,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: flex-end; */
     /* TODO: make it closer to the original shadow */
     box-shadow: 0px 40px 50px -30px hsl(240, 25%, 37%);
 }
-img {
+.accordion > img {
     position: fixed;
 }
 .accordion img:first-child {
@@ -77,7 +78,9 @@ header {
 .question:hover {
     color:hsl(14, 88%, 65%)
 }
-
+.question > img{
+    position: absolute;
+}
 /* animation-name: rotateIcon;
 animation-duration: 1s;
 animation-fill-mode: forwards;   */
