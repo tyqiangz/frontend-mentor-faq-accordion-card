@@ -34,9 +34,9 @@ main {
 .accordion {
     background-color: white;
     border-radius: 20px;
-    height: 62vh;
+    height: 70vh;
     width: 88vw;
-    margin: 22vh 6vw 16vh 6vw;
+    margin: 19vh 6vw 11vh 6vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,45 +58,52 @@ header {
     margin-bottom: 40px;
 }
 .frequently-asked-qns {
+    position:relative
     text-align: left;
     font-weight: 400;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 85%;
 }
 .question {
     font-size: 10pt;
+    height: 4em;
     width: 100%;
-    padding: 3%;
     border-bottom: 1px solid hsl(240, 5%, 91%);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
 }
 .question:hover {
     color:hsl(14, 88%, 65%)
 }
-.question > img{
-    position: absolute;
-}
-/* animation-name: rotateIcon;
-animation-duration: 1s;
-animation-fill-mode: forwards;   */
-.question:active {
-    font-weight: 700;
-    color:hsl(238, 29%, 16%);
-}
 @keyframes rotateIcon {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(180deg);}
 }
+.question[bold=true] {
+    font-weight: 700;
+    color:hsl(238, 29%, 16%);
+}
+.question[bold=true] > img{
+    animation-name: rotateIcon;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;  
+}
+.question[bold=true] + .answer {
+    display: block;
+}
 .answer {
-    border-top: none;
-    font-size: 10pt;
-    color: hsl(240, 6%, 50%);
     display: none;
+    border-top: none;
+    font-size: 9pt;
+    padding-top: 1em;
+    color: hsl(240, 6%, 50%);
+    width: 100%;
 }
 
 @media only screen and (min-width: 1440px){
