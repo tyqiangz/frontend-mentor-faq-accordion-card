@@ -40,16 +40,15 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: flex-end; */
     /* TODO: make it closer to the original shadow */
     box-shadow: 0px 40px 50px -30px hsl(240, 25%, 37%);
 }
-.accordion > img {
+.accordion > picture {
     position: fixed;
 }
-.accordion img:first-child {
+.accordion picture:first-child {
     transform: translateY(-55%);
-    margin-left: -13px;
+    margin-left: -20px;
 }
 header {
     font-weight: 700;
@@ -58,7 +57,7 @@ header {
     margin-bottom: 40px;
 }
 .frequently-asked-qns {
-    position:relative
+    position: relative;
     text-align: left;
     font-weight: 400;
     display: flex;
@@ -107,5 +106,43 @@ header {
 }
 
 @media only screen and (min-width: 1440px){
-
+    .accordion {
+        height: 60vh;
+        width: 68vw;
+        margin: 18vh 16vw 22vh 16vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .accordion picture:first-child {
+        position: relative;
+        left: 0;
+        transform: translateX(-10%);
+        margin-left: 0px;
+        overflow: hidden;
+    }
+    .accordion picture:nth-child(2) {
+        position: fixed;
+        transform: translate(-56%, -10%);
+        overflow: hidden;
+    }
+    .frequently-asked-qns {
+        width: 50%;
+        align-items: flex-start;
+    }
+    header {
+        width: 100%;
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .question, .answer {
+        width: 70%;
+    }
+    .question {
+        height: 3.5em;
+    }
+    .answer {
+        line-height: 1.5;
+    }
 }
